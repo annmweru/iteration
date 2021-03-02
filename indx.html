@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function getReady(arry){
+        var nextIndex=0;
+        return{
+            next() {
+                if(nextIndex <arr.length){
+                    return{value:arr.shift(), done:false}
+                }
+                else{
+                    return{done:true}
+                }
+            }
+        }
+
+    }
+    var waitingList=['sarah',"ann",'shilla'];
+    var iterateList= getReady(waitingList);
+    console.log(`${iterateList.next().value},your table is ready`);
+    console.log(`${iterateList.next().value},your table is ready`);
+    console.log(`${iterateList.next().value},your table is ready`);
+    console.log(`${iterateList.next().value},your table is ready`);
+
+
+</script>
+</body>
+</html>
